@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
+import { useState } from 'react';
 import './App.css';
+import Header from './Components/Header';
+import Register from './Pages/Register';
+import Login from './Pages/Login';
 
 function App() {
+  const [showRegisterDetails, setShowRegisterDetails] = useState(false);
+  const [showLoginDetails, setShowLoginDetails] = useState(false);
+  const [showHeadings, setShowHeadings] = useState(true);
+  const handleRegisterClick = () => {
+    setShowRegisterDetails(true);
+    setShowLoginDetails(false);
+    setShowHeadings(false);
+  };
+  const handleLoginClick = () => {
+    setShowLoginDetails(true);
+    setShowRegisterDetails(false);
+    setShowHeadings(false);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Header
+        onRegisterClick={handleRegisterClick}
+        onLoginClick={handleLoginClick}
+        showHeadings={showHeadings}
+      />
+      {showRegisterDetails ? <Register /> : null}
+      {showLoginDetails ? <Login/> : null}
+      {/* Rest of your content */}
     </div>
   );
 }
