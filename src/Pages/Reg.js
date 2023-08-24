@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Register.css';
+import axios from 'axios';
 const Reg = ({onLoginClick}) => {
   const initialFormData = {
     fullName: '',
@@ -14,6 +15,7 @@ const Reg = ({onLoginClick}) => {
   };
 
   const [formData, setFormData] = useState(initialFormData);
+  const [suggestions, setSuggestions] = useState([]);
   const [errors, setErrors] = useState({}); // Object to hold field error messages
   const isButtonDisabled = Object.values(formData).every((value) => value !== "");
   const buttonColorClass = isButtonDisabled ? "button-dark" : "button-light";
@@ -32,6 +34,20 @@ const Reg = ({onLoginClick}) => {
   const handleLoginClick = () => {
    
     window.location.href = './login';
+  };
+  useEffect(() => {
+    fetchStateSuggestions();
+  }, []);
+
+  const fetchStateSuggestions = async () => {
+    try {
+      const response = await axios.get('https://restcountries.com/v3.1/all');
+      const countries = response.data;
+      const stateSuggestions = countries.map(country => country.subregion).filter(state => state);
+      setSuggestions(stateSuggestions);
+    } catch (error) {
+      console.error('Error fetching state suggestions:', error);
+    }
   };
 
 
@@ -224,7 +240,13 @@ const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@
             type="text"
             value={formData.location}
             onChange={(e) => handleInputChange('location', e.target.value)}
+              list="states"
           />
+          <datalist id="states">
+    {suggestions.map((state, index) => (
+      <option key={index} value={state} />
+    ))}
+  </datalist>
            {errors.location && <p className="error-message">{errors.location}</p>}
         </div>
         <div>
