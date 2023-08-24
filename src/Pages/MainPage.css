@@ -1,0 +1,31 @@
+.main {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .job-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .job-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .company-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .job-info {
+    display: flex;
+    flex-direction: column;
+  }
+  

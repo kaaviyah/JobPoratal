@@ -3,8 +3,9 @@
 // "[a-zA-Z]+\\.?"
 import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";
+// import { useHistory } from 'react-router-dom';
 import './Login.css';
-const Login=(onRegisterClick)=> {
+const Login=(onLoginClick,onRegisterClick)=> {
   // const navigate = useNavigate();
   const [input, setInput] = useState({
     name: "",
@@ -13,6 +14,7 @@ const Login=(onRegisterClick)=> {
   });
   const [ error,setError] = useState("");
   const [success, setSuccess] = useState("");
+  // const history = useHistory();
   const onChange = (event) => {
     setInput({ ...input, [event.target.name]: event.target.value });
   };
@@ -20,7 +22,7 @@ const Login=(onRegisterClick)=> {
   const buttonColorClassLogin = isButtonDisabledLogin ? "button-dark" : "button-light";
   const handleRegisterClick = () => {
    
-    window.location.href = '.Pages/Register';
+    window.location.href = '/Register';
   };
 
   const nameValidation = (name) => {
@@ -53,7 +55,8 @@ const Login=(onRegisterClick)=> {
     const username = input.name;
     console.log(username);
     // navigate("/Register", { state: { username: username } });
-    // navigate("/Register");
+    // navigate("./Pages/Reg");
+    handleRegisterClick();
     e.preventDefault();
 
   };
@@ -117,11 +120,11 @@ const Login=(onRegisterClick)=> {
           
           <button className={buttonColorClassLogin}
          type="submit" disabled={!isButtonDisabledLogin} onClick={handleSubmit}
-         >Register</button>
+         >Login</button>
             </div>
             </div>
           </div>
-          <p className='para1'>Already Registered? <button className='lbtn' onClick={handleRegisterClick}>Login</button>Here</p>
+          <p className='para1'>Already Registered? <button className='lbtn' onClick={onRegisterClick}>Register</button>Here</p>
         </div>
       </div>
    
