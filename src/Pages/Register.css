@@ -27,19 +27,24 @@ box-sizing: border-box;
     /* margin-left: 300x; */
     position: fixed;
     margin-left: 350px;
+    height: 350px;
   
 
   }
 img{
-width: 200px;
+width: 150px;
 align-items: center;
-margin-left: 60px;
+margin-left: 80px;
   }
  
  .name,
   h2{
   text-align: center;
+  margin-top: -13px;
+
+  
  }
+
   /* .form-container {
     padding: 20px;
     border-radius: 8px;
@@ -52,14 +57,14 @@ margin-left: 60px;
 h2{
     margin-left: 10px;
   }
-  .card2 {
+  .registration-form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
     width: 700px;
     margin-left: 450px;
-    height: 700px;
+    height: 850px;
     margin-top: 50px;
    
 
@@ -68,11 +73,10 @@ h2{
   
 
 
-   .ip,
-   input
+   .ip
    {
     width: 100%;
-    padding: 10px 5px;
+    padding: 10px 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 1rem;
@@ -97,7 +101,7 @@ h2{
     border-color: #275df5;
     outline: none; 
    }
-  .btn,
+  /* .btn,
   button
   {
       background-color:#275df5;
@@ -110,9 +114,64 @@ h2{
 
       
       
-    }
+    } */
   /* App.css */
 /* ... (other styles) */
+.button-light {
+  background-color: #f2f2f2;
+  color: #666;
+  border-color:none;
+  /* border: none;
+  padding: 10px 20px;
+  border-radius: 1.5rem;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 1rem;
+  margin-left: 10px; */
+  border-radius: 1.5rem;
+  border-width: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding: 10px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
+  line-height: 20px;
+  margin-top: 5px;
+
+}
+
+.button-dark {
+  background-color: #3498db;
+  color: #ffffff;
+  border-color: #3498db;
+  border-radius: 1.5rem;
+  border-width: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding: 10px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
+  line-height: 20px;
+  margin-top: 5px;
+  /* padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 1rem;
+  margin-left: 10px; */
+
+}
+
+.button-light:disabled {
+  background-color: #e0e0e0;
+  color: #999;
+}
+
+.button-dark:disabled {
+  background-color: #3498db;
+  color: #ffffff
+}
 .error-messages {
   margin-top: 10px;
 }
@@ -121,4 +180,19 @@ h2{
   color: red;
   margin: 5px 0;
   font-size: 14px;
+}
+
+.lbtn, 
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: medium;
+  color: #275df5;
+ align-items: center;
+}
+.para{
+text-align: center;
+margin-top: -30px;
+margin-right: 160px;
 }
