@@ -1,7 +1,6 @@
 import React from 'react';
 import './JobCard.css';
 import { useState } from 'react';
-import companyImage from '../Images/Amazon.jpg'
 function JobCard({ company, image, description,position,experience,skills }) {
     const [applied, setApplied] = useState(false);
 

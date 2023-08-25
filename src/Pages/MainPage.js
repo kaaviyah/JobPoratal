@@ -1,7 +1,6 @@
 import React from 'react'
 import JobCard from './JobCard'
 import './MainPage.css';
-import companyAImage from '../Images/Amazon.jpg'
 const MainPage = () => {
   return (
     <div>
