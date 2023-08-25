@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import './Register.css';
 import axios from 'axios';
-const Reg = ({onLoginClick}) => {
+const Reg = (onLoginClick) => {
   const initialFormData = {
     fullName: '',
     email: '',
@@ -19,6 +19,10 @@ const Reg = ({onLoginClick}) => {
   const [errors, setErrors] = useState({}); // Object to hold field error messages
   const isButtonDisabled = Object.values(formData).every((value) => value !== "");
   const buttonColorClass = isButtonDisabled ? "button-dark" : "button-light";
+  const handleLoginClick = () => {
+   
+    window.location.href = '/login';
+  };
   const handleInputChange = (field, value) => {
     setFormData({
       ...formData,
@@ -31,10 +35,10 @@ const Reg = ({onLoginClick}) => {
       [field]: '',
     });
   };
-  const handleLoginClick = () => {
+  // const handleLoginClick = () => {
    
-    window.location.href = './login';
-  };
+  //   window.location.href = './login';
+  // };
   useEffect(() => {
     fetchStateSuggestions();
   }, []);
@@ -53,7 +57,7 @@ const Reg = ({onLoginClick}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    handleLoginClick();
     // Validate fields
     const fieldErrors = {};
 

@@ -1,0 +1,16 @@
+.apply-button {
+     border: 1px solid #275df5;
+    padding: 8px 16px;
+    background-color: #fff;
+    color:#275df5;
+    cursor: pointer;
+    border-radius: 0.9rem;
+    padding: 5px 15px;
+    /* border-color: #275df5; */
+     border-color: #275df5;
+    background-color:white;
+}
+
+.apply-button.applied {
+    border-color:#275df5 ; /* Change border color when applied */
+}

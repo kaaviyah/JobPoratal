@@ -1,31 +1,109 @@
-.main {
-    text-align: center;
-    padding: 20px;
+
+.container1 *{
+  box-sizing: border-box;
   }
-  
-  .job-cards {
+  .content1{
+    width: 1200px;
     display: flex;
-    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .job-container1 {
+    display: flex;
     justify-content: center;
-  }
-  
-  .job-card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .company-logo {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  .job-info {
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+     
+    }
+
+
+
+.card-main {
     display: flex;
     flex-direction: column;
+    gap: 20px; 
+    margin-top: 10px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    /* margin-left: 300x; */
+    position: fixed;
+    margin-left: 200px;
+    height: 350px;
+  
+
   }
   
+.job-form{
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        width: 658px;
+        margin-left: 250px;
+        height: 50px;
+        margin-top: 10px;
+}
+.main-head,
+h3{
+  margin-top: -7px;
+  margin-left: 50px;
+}
+.job-form1{
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 300px;
+    /* margin-right: -100px; */
+    height: 350px;
+    margin-top: 10px;
+    position: fixed;
+    margin-left: 935px;
+}
+.job-form2{
+ padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  width: 658px;
+  margin-left: 250px;
+  height: 450px;
+ margin-top: 70px;
+ margin-left: -655px;
+
+}
+.card-head{
+  margin-top: 40px;
+}
+.list:nth-child(1){
+  
+  margin-top: -40px;
+}
+.job-form3{
+  padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   background-color: white;
+   width: 658px;
+   margin-left: 250px;
+   height: 450px;
+  margin-top: 540px;
+  margin-left: -655px;
+ 
+ }
+ .job-form4{
+  padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   background-color: white;
+   width: 658px;
+   margin-left: 250px;
+   height: 450px;
+  margin-top: 1010px;
+  margin-left: -655px;
+ 
+ }
+ 
+

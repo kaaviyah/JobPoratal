@@ -5,7 +5,7 @@ import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 // import { useHistory } from 'react-router-dom';
 import './Login.css';
-const Login=(onLoginClick,onRegisterClick)=> {
+const Login=()=> {
   // const navigate = useNavigate();
   const [input, setInput] = useState({
     name: "",
@@ -20,10 +20,15 @@ const Login=(onLoginClick,onRegisterClick)=> {
   };
   const isButtonDisabledLogin = Object.values(input).every((value) => value !== "");
   const buttonColorClassLogin = isButtonDisabledLogin ? "button-dark" : "button-light";
-  const handleRegisterClick = () => {
+  const handleMainClick = () => {
+   
+    window.location.href = '/MainPage';
+  };
+  const handleRegClick = () => {
    
     window.location.href = '/Register';
   };
+
 
   const nameValidation = (name) => {
     const nameRegex = /^[A-Za-z][A-Za-z0-9_]{5,29}$/;
@@ -56,14 +61,14 @@ const Login=(onLoginClick,onRegisterClick)=> {
     console.log(username);
     // navigate("/Register", { state: { username: username } });
     // navigate("./Pages/Reg");
-    handleRegisterClick();
+    handleMainClick();
     e.preventDefault();
 
   };
   return (
     <div className="register">
       <div className="row">
-      <div className="card">
+      <div className="login-card">
         <div className="input-box">
           <h2>Create an account</h2>
           <span>Your Dream job in Your Door  Step!</span>
@@ -124,7 +129,7 @@ const Login=(onLoginClick,onRegisterClick)=> {
             </div>
             </div>
           </div>
-          <p className='para1'>Already Registered? <button className='lbtn' onClick={onRegisterClick}>Register</button>Here</p>
+          <p className='para1'>Already Registered? <button className='lbtn' onClick={handleRegClick}>Register</button>Here</p>
         </div>
       </div>
    

@@ -5,7 +5,22 @@ import './Header.css';
 
 
 const Header = ({onRegisterClick, onLoginClick, showHeadings}) => {
- 
+  const handleLoginClick = () => {
+   
+    window.location.href = '/login';
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleLoginClick();
+  }
+  const handleRegClick = () => {
+   
+    window.location.href = '/Register';
+  };
+  const handleSubmit1 = (event) => {
+    event.preventDefault();
+    handleRegClick();
+  }
   return (
    <>
     <header className="header">
@@ -14,9 +29,9 @@ const Header = ({onRegisterClick, onLoginClick, showHeadings}) => {
       </div>
       <nav className="nav">
        
-      <button onClick={onRegisterClick}>Register</button>
+      <button onClick={handleSubmit1}>Register</button>
      
-        <button onClick={onLoginClick} >Login</button>
+        <button onClick={handleSubmit} >Login</button>
       </nav>
     </header>
 {/* <>
@@ -30,7 +45,10 @@ const Header = ({onRegisterClick, onLoginClick, showHeadings}) => {
     </> */}
 
 
+ 
+        <h1 className="job-head">Find Your Dream Job By Registering</h1>
 
+   
     </>
   );
 };
