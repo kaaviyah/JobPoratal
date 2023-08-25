@@ -45,10 +45,10 @@ const Header = ({onRegisterClick, onLoginClick, showHeadings}) => {
     </> */}
 
 
- 
-        <h1 className="job-head">Find Your Dream Job By Registering</h1>
 
-   
+        <h1 className="job-head">Find Your Dream Company</h1>
+
+
     </>
   );
 };

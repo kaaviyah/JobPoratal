@@ -10,24 +10,24 @@ import MainPage from "./Pages/MainPage";
 function App() {
   const [showRegisterDetails, setShowRegisterDetails] = useState(false);
   const [showLoginDetails, setShowLoginDetails] = useState(false);
-  // const [showHeadings, setShowHeadings] = useState(true);
+  const [showHeadings, setShowHeadings] = useState(true);
   const [showMainDetails, setShowMainDetails] = useState(false);
   const handleRegisterClick = () => {
     setShowRegisterDetails(true);
     setShowLoginDetails(false);
-    // setShowHeadings(false);
+    setShowHeadings(false);
     setShowMainDetails(false)
   };
   const handleLoginClick = () => {
     setShowLoginDetails(true);
     setShowRegisterDetails(false);
-    // setShowHeadings(false);
+    setShowHeadings(false);
     setShowMainDetails(false);
   };
   const handleMainClick = () => {
     setShowMainDetails(true);
     setShowRegisterDetails(false);
-    // setShowHeadings(false);
+    setShowHeadings(false);
     setShowLoginDetails(false);
 
   };
