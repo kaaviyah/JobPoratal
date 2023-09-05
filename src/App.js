@@ -16,7 +16,7 @@ function App() {
     setShowRegisterDetails(true);
     setShowLoginDetails(false);
     setShowHeadings(false);
-    setShowMainDetails(false)
+    setShowMainDetails(false);
   };
   const handleLoginClick = () => {
     setShowLoginDetails(true);
@@ -29,36 +29,22 @@ function App() {
     setShowRegisterDetails(false);
     setShowHeadings(false);
     setShowLoginDetails(false);
-
   };
 
   return (
     <div className="App">
-       <Header
+      <Header
         onRegisterClick={handleRegisterClick}
         onLoginClick={handleLoginClick}
-        // showHeadings={showHeadings}
         onMainClick={handleMainClick}
-      /> 
-      {/* {showRegisterDetails ? <Register /> : null} */}
-   {showRegisterDetails ? <Reg /> : null}
-     {showLoginDetails ? <Login /> : null} 
-     { showMainDetails ? <MainPage />:null} 
-     {/* Rest of your content */}
+      />
+
+      {showRegisterDetails ? <Reg /> : null}
+      {showLoginDetails ? <Login /> : null}
+      {showMainDetails ? <MainPage /> : null}
+
       <Router>
         <Routes>
-          {/* <Route
-            path="/"
-            element={
-              // <Header
-              //   onRegisterClick={handleRegisterClick}
-              
-              //   onLoginClick={handleLoginClick}
-              //   showHeadings={showHeadings}
-             <Login />
-            }
-          /> */}
-
           <Route path="/login" element={<Login />} />
           <Route path="/Register" element={<Reg />} />
           <Route path="/MainPage" element={<MainPage />} />
