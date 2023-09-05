@@ -65,6 +65,7 @@ const Login=()=> {
     e.preventDefault();
 
   };
+ 
   return (
     <div className="register">
       <div className="row">
@@ -77,7 +78,7 @@ const Login=()=> {
               style={{
                 marginBottom: "10px",
                 marginLeft: "40px",
-                marginTop: "20px",
+                marginTop: "10px",
                 color: "red",
               }}
             >

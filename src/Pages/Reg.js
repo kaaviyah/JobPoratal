@@ -16,7 +16,7 @@ const Reg = (onLoginClick) => {
 
   const [formData, setFormData] = useState(initialFormData);
   const [suggestions, setSuggestions] = useState([]);
-  const [errors, setErrors] = useState({}); // Object to hold field error messages
+  const [errors, setErrors] = useState({}); 
   const isButtonDisabled = Object.values(formData).every((value) => value !== "");
   const buttonColorClass = isButtonDisabled ? "button-dark" : "button-light";
   const handleLoginClick = () => {
@@ -29,7 +29,7 @@ const Reg = (onLoginClick) => {
       [field]: value,
     });
 
-    // Clear the error message when the user starts typing
+    
     setErrors({
       ...errors,
       [field]: '',
@@ -58,7 +58,8 @@ const Reg = (onLoginClick) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleLoginClick();
-    // Validate fields
+    localStorage.setItem('formData', JSON.stringify(formData));
+   
     const fieldErrors = {};
 
     if (formData.fullName === '') {
@@ -106,31 +107,31 @@ const Reg = (onLoginClick) => {
           fieldErrors.location = 'Location is required';
         }
       
-    // Check if any errors exist
+
     if (Object.keys(fieldErrors).length > 0) {
       setErrors(fieldErrors);
     } else {
-      // ... (form submission logic)
+     
 
-      // Reset the form after successful submission
+     
       setFormData(initialFormData);
       setErrors({});
     }
   };
   
 
-  // Helper function to validate email format
+  
   const validateEmail = (email) => {
     const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
     return emailRegex.test(email);
   };
 
-  // Helper function to validate password format
+
   const validatePassword = (password) => {
-    // Add your password validation logic here
+  
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
 
-    return passwordRegex.test(password); // Replace with your validation result
+    return passwordRegex.test(password); 
   };
   const validateMobile=(mobileNumber)=>
   {
@@ -138,6 +139,12 @@ const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@
     return mobileNumberRegex.test(mobileNumber);
 
   }
+  React.useEffect(() => {
+    const storedData = localStorage.getItem('formData');
+    if (storedData) {
+      setFormData(JSON.parse(storedData));
+    }
+  }, []);
 
   return (
     <div className='container'>
